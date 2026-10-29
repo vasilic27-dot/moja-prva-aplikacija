@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jednostavna evidencija svakodnevnih zadataka.">
+  <title>Moji zadaci</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <span class="eyebrow">MALO ORGANIZACIJE, VIŠE MIRA</span>
+      <h1>Moji zadaci<span>.</span></h1>
+      <p>Zapiši šta želiš da uradiš. Jedan zadatak po jedan.</p>
+    </header>
+    <section class="overview" aria-label="Pregled zadataka"><div><span>Ukupno zadataka</span><strong id="total-count">0</strong></div><div><span>U toku</span><strong id="active-count">0</strong></div><div><span>Završeno</span><strong id="done-count">0</strong></div></section>
+    <section class="card" aria-label="Evidencija zadataka">
+      <form id="task-form">
+        <label for="task-input">Novi zadatak</label>
+        <div class="input-row">
+          <input id="task-input" type="text" placeholder="Šta je sledeće na redu?" maxlength="300" required autocomplete="off">
+          <button class="add-button" type="submit">+ Dodaj</button>
+        </div>
+        <div class="task-options"><div><label for="task-priority">Prioritet</label><select id="task-priority"><option value="visok">Visok</option><option value="srednji" selected>Srednji</option><option value="nizak">Nizak</option></select></div><div><label for="task-due">Rok za završetak <span class="optional">(opciono)</span></label><input id="task-due" type="date" max="9999-12-31"></div></div>
+      </form>
+      <div class="filters" role="search" aria-label="Pretraga i filteri zadataka"><div class="search-field"><label for="search">Pretraga</label><input id="search" type="search" placeholder="Pretraži zadatke…"></div><div><label for="filter-status">Status</label><select id="filter-status"><option value="svi">Svi zadaci</option><option value="aktivni">Nezavršeni</option><option value="zavrseni">Završeni</option></select></div><div><label for="filter-priority">Prioritet</label><select id="filter-priority"><option value="svi">Svi prioriteti</option><option value="visok">Visok</option><option value="srednji">Srednji</option><option value="nizak">Nizak</option></select></div><div><label for="filter-due">Rok</label><select id="filter-due"><option value="svi">Svi rokovi</option><option value="kasni">Prekoračen rok</option><option value="danas">Danas</option><option value="bez">Bez roka</option></select></div><button type="button" id="reset-filters" class="reset-button">Poništi filtere</button></div>
+      <div class="list-heading"><h2>Tvoja lista</h2><span id="counter" role="status" aria-live="polite">0 zadataka</span></div>
+      <ul id="task-list" aria-label="Zadaci"></ul>
+      <div id="empty-state"><span class="empty-icon" aria-hidden="true">✓</span><h3>Prostor za tvoje planove</h3><p>Dodaj prvi zadatak i kreni malim koracima.</p></div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+    <footer>Zadaci se čuvaju u ovom browseru na ovom uređaju.</footer>
+  </main>
+</body>
+</html>
