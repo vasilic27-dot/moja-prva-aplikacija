@@ -1,4 +1,5 @@
 :root { font-family: "Segoe UI", Arial, sans-serif; color: #243d35; background: #f3f5ef; font-synthesis: none; }
+:root { color-scheme: light; }
 * { box-sizing: border-box; }
 body { margin: 0; min-height: 100vh; }
 .app { max-width: 720px; margin: 0 auto; padding: 80px 24px 40px; }
@@ -67,3 +68,35 @@ select, input[type="date"], input[type="search"] { width: 100%; min-width: 0; he
 .status { color: #8b4431; }
 @media (max-width: 760px) { .filters { grid-template-columns: 1fr 1fr; } .search-field { grid-column: 1 / -1; } }
 @media (max-width: 480px) { .app { padding-top: 32px; } .overview { gap: 8px; } .overview > div { padding: 14px 10px; } .overview span { font-size: 11px; } .overview strong { font-size: 25px; } .card { padding: 20px; } .task-options { grid-template-columns: 1fr; } .task-meta { gap: 8px; padding-left: 0; } .task { align-items: flex-start; } }
+
+/* Teme: postojeća svetla paleta i kontrastna tamna paleta. */
+.theme-toolbar { display: flex; justify-content: flex-end; margin-bottom: 14px; }
+.theme-toggle { padding: 10px 16px; border-radius: 9px; border: 1px solid #c4d1c8; background: #fff; color: #315e48; font-size: 13px; font-weight: 600; }
+.theme-toggle:hover { background: #e6efe9; }
+#theme-status { margin: 12px 0; }
+:root[data-theme="dark"] { color-scheme: dark; color: #e1ebe5; background: #141d19; }
+[data-theme="dark"] .card, [data-theme="dark"] .overview > div { background: #1d2923; border-color: #3b4d41; box-shadow: none; }
+[data-theme="dark"] .overview > div:last-child { background: #263c30; border-color: #41604b; }
+[data-theme="dark"] .eyebrow, [data-theme="dark"] header > p,
+[data-theme="dark"] .overview span, [data-theme="dark"] .optional,
+[data-theme="dark"] #counter, [data-theme="dark"] .due,
+[data-theme="dark"] #empty-state p, [data-theme="dark"] footer { color: #b0c1b5; }
+[data-theme="dark"] input[type="text"], [data-theme="dark"] input[type="date"],
+[data-theme="dark"] input[type="search"], [data-theme="dark"] select { background: #16221b; border-color: #506354; color: #e1ebe5; }
+[data-theme="dark"] input::placeholder { color: #a1b2a6; opacity: 1; }
+[data-theme="dark"] .filters, [data-theme="dark"] .list-heading, [data-theme="dark"] .task { border-color: #3b4d41; }
+[data-theme="dark"] .add-button { background: #98d2ae; color: #10271a; }
+[data-theme="dark"] .add-button:hover { background: #b4e3c5; }
+[data-theme="dark"] .reset-button { color: #a9d8bb; }
+[data-theme="dark"] .task input { accent-color: #98d2ae; }
+[data-theme="dark"] .delete-button { color: #ffb7aa; background: #1d2923; border-color: #78564d; }
+[data-theme="dark"] .delete-button:hover { background: #49302a; }
+[data-theme="dark"] .empty-icon { background: #2b4433; color: #b4d7a9; }
+[data-theme="dark"] .visok { background: #4d2c29; color: #ffc0b5; }
+[data-theme="dark"] .srednji { background: #443b22; color: #f6d38c; }
+[data-theme="dark"] .nizak { background: #254333; color: #b4e2c7; }
+[data-theme="dark"] .overdue, [data-theme="dark"] .status { color: #ffb5a6; }
+[data-theme="dark"] .task.completed .task-title { color: #a1b2a6; }
+[data-theme="dark"] .theme-toggle { color: #d1e8d9; background: #263c30; border-color: #58715f; }
+[data-theme="dark"] .theme-toggle:hover { background: #35523f; }
+[data-theme="dark"] :focus-visible { outline-color: #f3c479; }

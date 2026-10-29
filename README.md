@@ -33,3 +33,9 @@ Koristi isti browser, profil i istu lokaciju fajla. Brisanje podataka browsera u
 - tests.cjs — funkcionalne provere sa simuliranim DOM-om i lokalnim skladištem; pokretanje: node tests.cjs (ako je Node.js instaliran)
 
 Automatizovane provere pokrivaju migraciju, dodavanje, prioritete, datume, kombinovanje filtera, pretragu, završavanje, brisanje, ponovno učitavanje, neispravne podatke i neuspeh čuvanja. Prošle su u ugrađenom JavaScript okruženju. Vizuelna provera u browseru nije izvršena: ugrađeni browser blokira lokalne file URL-ove.
+
+## Svetla i tamna tema
+
+Dugme u gornjem desnom uglu prebacuje svetlu i tamnu temu. Početna tema je svetla. Izbor se čuva odvojeno od zadataka u localStorage-u i učitava pre prikaza stranice. Ako browser blokira čuvanje, tema se i dalje menja za tekuću stranicu, a aplikacija prikazuje poruku.
+
+Provere teme: node theme-tests.cjs. Provereni su oba smera prebacivanja, ponovno učitavanje sačuvanog izbora, pristupačne oznake, neispravan izbor, blokirano skladište i očuvanje zadataka u simuliranom DOM okruženju.

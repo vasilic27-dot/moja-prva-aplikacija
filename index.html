@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Jednostavna evidencija svakodnevnih zadataka.">
   <title>Moji zadaci</title>
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <main class="app">
     <header>
+      <div class="theme-toolbar"><button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Tamna tema</button></div>
       <span class="eyebrow">MALO ORGANIZACIJE, VIŠE MIRA</span>
       <h1>Moji zadaci<span>.</span></h1>
       <p>Zapiši šta želiš da uradiš. Jedan zadatak po jedan.</p>
     </header>
+    <p id="theme-status" class="status" role="status" aria-live="polite"></p>
     <section class="overview" aria-label="Pregled zadataka"><div><span>Ukupno zadataka</span><strong id="total-count">0</strong></div><div><span>U toku</span><strong id="active-count">0</strong></div><div><span>Završeno</span><strong id="done-count">0</strong></div></section>
     <section class="card" aria-label="Evidencija zadataka">
       <form id="task-form">
